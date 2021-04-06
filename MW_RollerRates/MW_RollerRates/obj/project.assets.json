@@ -308,6 +308,20 @@
             "rid": "win"
           }
         }
+      },
+      "DataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Dapper": "2.0.78",
+          "MySql.Data": "8.0.23"
+        },
+        "compile": {
+          "bin/placeholder/DataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataLayer.dll": {}
+        }
       }
     }
   },
@@ -978,11 +992,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "DataLayer/1.0.0": {
+      "type": "project",
+      "path": "../DataLayer/DataLayer.csproj",
+      "msbuildProject": "../DataLayer/DataLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 2.0.78",
+      "DataLayer >= 1.0.0",
       "MySql.Data >= 8.0.23"
     ]
   },
@@ -1012,7 +1032,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Git\\MW_Roller-Rates\\MW_RollerRates\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "D:\\Git\\MW_Roller-Rates\\MW_RollerRates\\DataLayer\\DataLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
