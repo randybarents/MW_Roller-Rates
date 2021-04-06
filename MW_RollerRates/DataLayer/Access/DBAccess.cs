@@ -12,7 +12,7 @@ namespace DataLayer
     {
         public string GetConnectionString()
         {
-            return "server=;database=;username=";
+            return "Server=studmysql01.fhict.local;Uid=dbi365190;Database=dbi365190;Pwd=MySQLPass123@;";
         }
 
         public List<T> LoadData<T>(string sql)
