@@ -528,6 +528,7 @@
       "DataLayer/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.78",
+          "ModelLayer": "1.0.0",
           "MySql.Data": "8.0.23"
         },
         "runtime": {
@@ -535,6 +536,14 @@
         },
         "compile": {
           "DataLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "runtime": {
+          "ModelLayer.dll": {}
+        },
+        "compile": {
+          "ModelLayer.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2392,6 +2401,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "DataLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModelLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

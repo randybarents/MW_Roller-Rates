@@ -7,3 +7,6 @@ D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\obj\Debug\netstandard2.0\DataLay
 D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\obj\Debug\netstandard2.0\DataLayer.csproj.CoreCompileInputs.cache
 D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\obj\Debug\netstandard2.0\DataLayer.dll
 D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\obj\Debug\netstandard2.0\DataLayer.pdb
+D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\bin\Debug\netstandard2.0\ModelLayer.dll
+D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\bin\Debug\netstandard2.0\ModelLayer.pdb
+D:\Git\MW_Roller-Rates\MW_RollerRates\DataLayer\obj\Debug\netstandard2.0\DataLayer.csproj.CopyComplete

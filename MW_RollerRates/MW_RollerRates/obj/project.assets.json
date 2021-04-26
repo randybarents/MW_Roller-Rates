@@ -314,6 +314,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Dapper": "2.0.78",
+          "ModelLayer": "1.0.0",
           "MySql.Data": "8.0.23"
         },
         "compile": {
@@ -321,6 +322,16 @@
         },
         "runtime": {
           "bin/placeholder/DataLayer.dll": {}
+        }
+      },
+      "ModelLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLayer.dll": {}
         }
       }
     }
@@ -997,6 +1008,11 @@
       "type": "project",
       "path": "../DataLayer/DataLayer.csproj",
       "msbuildProject": "../DataLayer/DataLayer.csproj"
+    },
+    "ModelLayer/1.0.0": {
+      "type": "project",
+      "path": "../ModelLayer/ModelLayer.csproj",
+      "msbuildProject": "../ModelLayer/ModelLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {

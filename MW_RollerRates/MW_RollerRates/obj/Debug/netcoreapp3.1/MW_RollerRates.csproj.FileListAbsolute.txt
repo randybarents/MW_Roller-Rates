@@ -52,3 +52,5 @@ D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\obj\Debug\netcoreapp3.1\MW_
 D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\obj\Debug\netcoreapp3.1\MW_RollerRates.dll
 D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\obj\Debug\netcoreapp3.1\MW_RollerRates.pdb
 D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\obj\Debug\netcoreapp3.1\MW_RollerRates.genruntimeconfig.cache
+D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\bin\Debug\netcoreapp3.1\ModelLayer.dll
+D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\bin\Debug\netcoreapp3.1\ModelLayer.pdb

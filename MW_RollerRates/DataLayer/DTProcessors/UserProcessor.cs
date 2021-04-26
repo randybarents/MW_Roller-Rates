@@ -5,6 +5,7 @@ using System.Data;
 using Dapper;
 using System.Linq;
 using MySql.Data.MySqlClient;
+using ModelLayer;
 
 namespace DataLayer.DTProcessors
 {
@@ -17,7 +18,7 @@ namespace DataLayer.DTProcessors
 
         public void CreateUser(string email, string password, string displayname, string description)
         {
-            DTModels.UserDTO data = new DTModels.UserDTO
+            UserDTO data = new UserDTO
             {
                 Email = email,
                 Password = password,

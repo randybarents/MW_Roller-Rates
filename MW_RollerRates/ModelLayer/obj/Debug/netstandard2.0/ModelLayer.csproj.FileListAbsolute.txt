@@ -1,0 +1,8 @@
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.deps.json
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.dll
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\bin\Debug\netstandard2.0\ModelLayer.pdb
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.AssemblyInfoInputs.cache
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.AssemblyInfo.cs
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csproj.CoreCompileInputs.cache
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.dll
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.pdb

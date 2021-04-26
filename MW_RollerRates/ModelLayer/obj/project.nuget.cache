@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DbAK4EVa0nslBy9kmL8KJkKjzNWkVRPuFeJ62ihTL0tHneaql2MFTM25diWjbqUjvc8KHCCAF/4PVWWZc9mLmw==",
+  "success": true,
+  "projectFilePath": "D:\\Git\\MW_Roller-Rates\\MW_RollerRates\\ModelLayer\\ModelLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Randy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Randy\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
