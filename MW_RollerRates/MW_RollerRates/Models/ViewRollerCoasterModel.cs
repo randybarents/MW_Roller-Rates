@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ModelLayer
+namespace MW_RollerRates.Models
 {
-    public class RollerCoasterDTO
+    public class ViewRollerCoasterModel
     {
-        public int ID { get; set; }
         public string Name { get; set; }
         public decimal Speed { get; set; }
         public int Length { get; set; }
