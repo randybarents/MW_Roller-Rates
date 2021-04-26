@@ -7,8 +7,8 @@ namespace DataLayer
 {
     public class PasswordHashing
     {
-        private int iterations = 1000;
-        public string GenerateSalt()
+        private static int iterations = 1000;
+        public static string GenerateSalt()
         {
             byte[] salt = new byte[32];
             RNGCryptoServiceProvider rngProvider = new RNGCryptoServiceProvider();
@@ -18,7 +18,7 @@ namespace DataLayer
             return saltstring;
         }
 
-        public string GeneratePasswordHash(string password, string saltString)
+        public static string GeneratePasswordHash(string password, string saltString)
         {
             var salt = System.Text.Encoding.UTF8.GetBytes(saltString);
             Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(password, salt, iterations);
@@ -27,7 +27,7 @@ namespace DataLayer
             return keyB64;
         }
 
-        public bool ValidateUser(string givenPass, string userSalt, string userHash)
+        public static bool ValidateUser(string givenPass, string userSalt, string userHash)
         {
             string givenHash = GeneratePasswordHash(givenPass, userSalt);
             if (givenHash == userHash)

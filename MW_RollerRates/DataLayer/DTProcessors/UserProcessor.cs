@@ -18,15 +18,18 @@ namespace DataLayer.DTProcessors
 
         public void CreateUser(string email, string password, string displayname, string description)
         {
+            string salt = PasswordHashing.GenerateSalt();
+            string hash = PasswordHashing.GeneratePasswordHash(password, salt);
             UserDTO data = new UserDTO
             {
                 Email = email,
-                Password = password,
+                Salt = salt,
+                PasswordHash = hash,
                 DisplayName = displayname,
                 Description = description
             };
-            string sql = @"INSERT INTO user (Email, Password, DisplayName, Description)
-                            VALUES(@Email, @Password, @DisplayName, @Description);";
+            string sql = @"INSERT INTO user (Email, Salt, PasswordHash, DisplayName, Description)
+                            VALUES(@Email, @Salt, @PasswordHash, @DisplayName, @Description);";
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
                 con.Execute(sql, data);
