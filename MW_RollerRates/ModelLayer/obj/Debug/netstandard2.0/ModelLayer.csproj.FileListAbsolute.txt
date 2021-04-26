@@ -6,3 +6,4 @@ D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelL
 D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csproj.CoreCompileInputs.cache
 D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.dll
 D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.pdb
+D:\Git\MW_Roller-Rates\MW_RollerRates\ModelLayer\obj\Debug\netstandard2.0\ModelLayer.csprojAssemblyReference.cache

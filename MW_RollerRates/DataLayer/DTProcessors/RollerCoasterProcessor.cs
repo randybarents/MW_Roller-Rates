@@ -18,7 +18,7 @@ namespace DataLayer.DTProcessors
 
         public List<RollerCoasterDTO> LoadRollerCoasters()
         {
-            string sql = "SELECT * FROM item";
+            string sql = "SELECT * FROM RollerCoaster";
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
                 return con.Query<RollerCoasterDTO>(sql).ToList();
