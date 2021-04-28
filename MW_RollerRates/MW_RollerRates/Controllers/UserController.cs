@@ -25,7 +25,7 @@ namespace MW_RollerRates.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateUser(UserCreateViewModel user)
+        public IActionResult CreateUser(UserCreateModel user)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace MW_RollerRates.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Loginuser(LoginUserViewModel login)
+        public async Task<IActionResult> LoginUser(LoginUserViewModel login)
         {
             if (ModelState.IsValid)
             {
