@@ -71,10 +71,6 @@ namespace MW_RollerRates.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError("loginError", "E-mail and password do not match.");
-                }
             }
             return View();
         }

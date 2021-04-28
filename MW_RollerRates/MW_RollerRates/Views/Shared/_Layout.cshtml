@@ -28,11 +28,11 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="RollerCoaster" asp-action="ViewRollerCoasters">View Roller Coasters</a>
                         </li>
                     </ul>
-                    @{
-                        await Html.RenderPartialAsync("_UserInformationPartialView");
-                    }
                 </div>
             </div>
+            @{
+                await Html.RenderPartialAsync("_UserInformationPartialView");
+            }
         </nav>
     </header>
     <div class="container">

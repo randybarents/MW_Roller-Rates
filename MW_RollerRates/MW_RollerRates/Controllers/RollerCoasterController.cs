@@ -25,9 +25,29 @@ namespace MW_RollerRates.Controllers
                     Speed = row.Speed,
                     Length = row.Length,
                     Height = row.Height
-                });                    
+                });
             }
             return View(items);
+        }
+
+        [HttpGet]
+        public IActionResult SortRollerCoasters(string sortOrder)
+        {
+            var data = processor.LoadRollerCoasters();
+            var coasters = from r in data select r;
+            switch(sortOrder)
+            {
+                case "speed_asc":
+                    coasters = coasters.OrderBy(r => r.Speed);
+                    break;
+                case "length_desc":
+                    coasters = coasters.OrderByDescending(r => r.Length);
+                    break;
+                case "height_desc":
+                    coasters = coasters.OrderByDescending(r => r.Height);
+                    break;
+            }
+            return View(coasters.ToList());
         }
     }
 }
