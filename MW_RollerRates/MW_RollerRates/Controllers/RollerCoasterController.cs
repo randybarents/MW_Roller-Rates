@@ -30,7 +30,7 @@ namespace MW_RollerRates.Controllers
             return View(items);
         }
 
-        [HttpGet]
+        /*[HttpGet]
         public IActionResult SortRollerCoasters(string sortOrder)
         {
             var data = processor.LoadRollerCoasters();
@@ -48,6 +48,6 @@ namespace MW_RollerRates.Controllers
                     break;
             }
             return View(coasters.ToList());
-        }
+        }*/
     }
 }
