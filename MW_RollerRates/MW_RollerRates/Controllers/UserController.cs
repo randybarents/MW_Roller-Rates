@@ -78,5 +78,15 @@ namespace MW_RollerRates.Controllers
             }
             return View();
         }
+
+        [Authorize]
+        public IActionResult LogoutUser()
+        {
+            if (@User.Identity.IsAuthenticated)
+            {
+                HttpContext.SignOutAsync();
+            }
+            return RedirectToAction("LoginUser", "User");
+        }
     }
 }
