@@ -35,6 +35,24 @@ namespace DataLayer.DTProcessors
                 con.Execute(sql, data);
             }
         }
-        
+
+        public UserDTO GetUserByEmail(string email)
+        {
+            string sql = $"SELECT * FROM user WHERE email = '{email}';";
+            using (IDbConnection con = new MySqlConnection(GetConnectionString()))
+            {
+                return con.Query<UserDTO>(sql).FirstOrDefault();
+            }
+        }
+
+        public UserDTO GetUserByID(int id)
+        {
+            string sql = $"SELECT * FROM user WHERE id = '{id}';";
+            using (IDbConnection con = new MySqlConnection(GetConnectionString()))
+            {
+                return con.Query<UserDTO>(sql).FirstOrDefault();
+            }
+        }
+
     }
 }

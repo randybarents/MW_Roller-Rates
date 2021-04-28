@@ -20,7 +20,7 @@ namespace MW_RollerRates.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateUser(UserCreateModel user)
+        public IActionResult CreateUser(UserCreateViewModel user)
         {
             if (ModelState.IsValid)
             {
