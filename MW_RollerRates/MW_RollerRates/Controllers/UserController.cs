@@ -5,6 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataLayer.DTProcessors;
 using MW_RollerRates.Models;
+using ModelLayer;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MW_RollerRates.Controllers
 {
@@ -31,6 +36,45 @@ namespace MW_RollerRates.Controllers
                     user.Description
                     );
                 return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult LoginUser()
+        {
+            if (@User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Loginuser(LoginUserViewModel login)
+        {
+            if (ModelState.IsValid)
+            {
+                UserDTO userData = Processor.GetUserByEmail(login.Email);
+                if (userData != null)
+                {
+                    if (DataLayer.PasswordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
+                    {
+                        var userIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Name, userData.DisplayName));
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Email, userData.Email));
+
+                        var userPrincipal = new ClaimsPrincipal(userIdentity);
+
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal);
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("loginError", "E-mail and password do not match.");
+                }
             }
             return View();
         }
