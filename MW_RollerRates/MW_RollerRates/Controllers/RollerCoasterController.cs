@@ -12,6 +12,13 @@ namespace MW_RollerRates.Controllers
     {
         RollerCoasterProcessor processor = new RollerCoasterProcessor();
 
+        /*[HttpGet]
+        public IActionResult Index(string searchBy, string search)
+        {
+            
+        }*/
+
+
         [HttpGet]
         public IActionResult ViewRollerCoasters()
         {
@@ -30,12 +37,12 @@ namespace MW_RollerRates.Controllers
             return View(items);
         }
 
-        /*[HttpGet]
+        [HttpGet]
         public IActionResult SortRollerCoasters(string sortOrder)
         {
             var data = processor.LoadRollerCoasters();
             var coasters = from r in data select r;
-            switch(sortOrder)
+            switch (sortOrder)
             {
                 case "speed_asc":
                     coasters = coasters.OrderBy(r => r.Speed);
@@ -48,6 +55,6 @@ namespace MW_RollerRates.Controllers
                     break;
             }
             return View(coasters.ToList());
-        }*/
+        }
     }
 }

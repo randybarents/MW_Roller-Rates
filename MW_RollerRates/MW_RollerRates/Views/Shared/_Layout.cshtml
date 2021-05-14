@@ -29,10 +29,10 @@
                         </li>
                     </ul>
                 </div>
+                @{
+                    await Html.RenderPartialAsync("_UserInformationPartialView");
+                }
             </div>
-            @{
-                await Html.RenderPartialAsync("_UserInformationPartialView");
-            }
         </nav>
     </header>
     <div class="container">

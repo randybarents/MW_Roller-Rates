@@ -60,15 +60,18 @@ namespace MW_RollerRates.Controllers
                 {
                     if (DataLayer.PasswordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
                     {
-                        var userIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-                        userIdentity.AddClaim(new Claim(ClaimTypes.Name, userData.DisplayName));
-                        userIdentity.AddClaim(new Claim(ClaimTypes.Email, userData.Email));
+                        var userClaims = new List<Claim>()
+                        {
+                            new Claim(ClaimTypes.Name , userData.DisplayName),
+                            new Claim(ClaimTypes.Email , userData.Email)
+                        };
 
-                        var userPrincipal = new ClaimsPrincipal(userIdentity);
+                        var userIdentity = new ClaimsIdentity(userClaims , "User Identity");
+                        var userPrincipal = new ClaimsPrincipal(new[] { userIdentity });
 
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal);
 
-                        return RedirectToAction("Index", "Home");
+                        await HttpContext.SignInAsync(userPrincipal);
+                        return RedirectToAction("ViewRollerCoasters", "RollerCoaster");
                     }
                 }
             }

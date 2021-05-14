@@ -20,7 +20,7 @@ namespace DataLayer
 
         public static string GeneratePasswordHash(string password, string saltString)
         {
-            var salt = System.Text.Encoding.UTF8.GetBytes(saltString);
+            var salt = Encoding.UTF8.GetBytes(saltString);
             Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(password, salt, iterations);
             byte[] key = rfc2898.GetBytes(32);
             string keyB64 = Convert.ToBase64String(key);
