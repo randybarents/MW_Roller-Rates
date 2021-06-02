@@ -45,6 +45,15 @@ namespace DataLayer.DTProcessors
             }
         }
 
+        public UserDTO GetUserByUserName(string username)
+        {
+            string sql = $"SELECT * FROM user WHERE displayname = '{username}';";
+            using (IDbConnection con = new MySqlConnection(GetConnectionString()))
+            {
+                return con.Query<UserDTO>(sql).FirstOrDefault();
+            }
+        }
+
         public UserDTO GetUserByID(int id)
         {
             string sql = $"SELECT * FROM user WHERE id = '{id}';";

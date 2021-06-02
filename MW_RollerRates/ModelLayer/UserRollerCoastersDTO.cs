@@ -4,7 +4,9 @@ using System.Text;
 
 namespace ModelLayer
 {
-    class UserRollerCoastersModel
+    public class UserRollerCoastersDTO
     {
+        public int User_ID { get; set; }
+        public int RollerCoaster_ID { get; set; }
     }
 }

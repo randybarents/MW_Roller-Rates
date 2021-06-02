@@ -45,7 +45,7 @@ namespace MW_RollerRates.Controllers
         {
             if (@User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ViewRollerCoasters", "RollerCoaster");
             }
             return View();
         }
@@ -60,17 +60,13 @@ namespace MW_RollerRates.Controllers
                 {
                     if (DataLayer.PasswordHashing.ValidateUser(login.Password, userData.Salt, userData.PasswordHash))
                     {
-                        var userClaims = new List<Claim>()
-                        {
-                            new Claim(ClaimTypes.Name , userData.DisplayName),
-                            new Claim(ClaimTypes.Email , userData.Email)
-                        };
+                        var userIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Name, userData.DisplayName));
+                        userIdentity.AddClaim(new Claim(ClaimTypes.Email, userData.Email));
 
-                        var userIdentity = new ClaimsIdentity(userClaims , "User Identity");
-                        var userPrincipal = new ClaimsPrincipal(new[] { userIdentity });
+                        var userPrincipal = new ClaimsPrincipal(userIdentity);
 
-
-                        await HttpContext.SignInAsync(userPrincipal);
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal);
                         return RedirectToAction("ViewRollerCoasters", "RollerCoaster");
                     }
                 }
@@ -86,6 +82,20 @@ namespace MW_RollerRates.Controllers
                 HttpContext.SignOutAsync();
             }
             return RedirectToAction("LoginUser", "User");
+        }
+
+        [HttpGet]
+        public IActionResult ViewProfile()
+        {
+            var userData = Processor.GetUserByUserName(User.Identity.Name);
+            UserViewModel userViewModel = new UserViewModel
+            {
+                Id = userData.ID,
+                Email = userData.Email,
+                DisplayName = userData.DisplayName,
+                Description = userData.Description
+            };
+            return View(userViewModel);
         }
     }
 }

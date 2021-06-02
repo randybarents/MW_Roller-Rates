@@ -46,6 +46,12 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Height)
                     </td>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <td>
+                            @Html.ActionLink("Check In", "CheckinRollercoaster", "RollerCoaster")
+                        </td>
+                    }
                 </tr>
                 }
             </tbody>

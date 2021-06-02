@@ -7,6 +7,7 @@
                     Welcome, @User.Identity.Name
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-dark" asp-action="ViewProfile" asp-controller="User">Profile</a>
                     <a class="dropdown-item text-dark" asp-action="ViewRollerCoasters" asp-controller="RollerCoaster">View all roller coasters!</a>
                     <a class="dropdown-item text-dark" asp-action="LogoutUser" asp-controller="User">Log Out</a>
                 </div>

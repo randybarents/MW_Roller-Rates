@@ -11,12 +11,48 @@ namespace MW_RollerRates.Controllers
     public class RollerCoasterController : Controller
     {
         RollerCoasterProcessor processor = new RollerCoasterProcessor();
+        UserRollerCoasterProcessor userRollerprocessor = new UserRollerCoasterProcessor();
+        UserProcessor userProcessor = new UserProcessor();
 
-        /*[HttpGet]
-        public IActionResult Index(string searchBy, string search)
+        [HttpGet]
+        public IActionResult Index(string sortOrder)
         {
-            
-        }*/
+            ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.SpeedSortParm = sortOrder == "Speed" ? "speed_desc" : "Speed";
+            ViewBag.LengthSortParm = sortOrder == "Length" ? "length_desc" : "Length";
+            ViewBag.HeightSortParm = sortOrder == "Height" ? "height_desc" : "Height";
+            var rollercoasters = processor.LoadRollerCoasters();
+            var rollercoasterstosort = from s in rollercoasters
+                                      select s;
+            switch (sortOrder)
+            {
+                case "name_asc":
+                    rollercoasterstosort = rollercoasterstosort.OrderBy(s => s.Name);
+                    break;
+                case "name_desc":
+                    rollercoasterstosort = rollercoasterstosort.OrderByDescending(s => s.Name);
+                    break;
+                case "speed_asc":
+                    rollercoasterstosort = rollercoasterstosort.OrderBy(s => s.Speed);
+                    break;
+                case "speed_desc":
+                    rollercoasterstosort = rollercoasterstosort.OrderByDescending(s => s.Speed);
+                    break;
+                case "length_asc":
+                    rollercoasterstosort = rollercoasterstosort.OrderBy(s => s.Length);
+                    break;
+                case "length_desc":
+                    rollercoasterstosort = rollercoasterstosort.OrderByDescending(s => s.Length);
+                    break;
+                case "height_asc":
+                    rollercoasterstosort = rollercoasterstosort.OrderBy(s => s.Height);
+                    break;
+                case "height_desc":
+                    rollercoasterstosort = rollercoasterstosort.OrderByDescending(s => s.Height);
+                    break;
+            }
+            return View(rollercoasterstosort.ToList());
+        }
 
 
         [HttpGet]
@@ -37,24 +73,11 @@ namespace MW_RollerRates.Controllers
             return View(items);
         }
 
-        [HttpGet]
-        public IActionResult SortRollerCoasters(string sortOrder)
+        public IActionResult CheckinRollercoaster(int id, string userName)
         {
-            var data = processor.LoadRollerCoasters();
-            var coasters = from r in data select r;
-            switch (sortOrder)
-            {
-                case "speed_asc":
-                    coasters = coasters.OrderBy(r => r.Speed);
-                    break;
-                case "length_desc":
-                    coasters = coasters.OrderByDescending(r => r.Length);
-                    break;
-                case "height_desc":
-                    coasters = coasters.OrderByDescending(r => r.Height);
-                    break;
-            }
-            return View(coasters.ToList());
+            var userData = userProcessor.GetUserByUserName(userName);
+            userRollerprocessor.CheckinRollerCoaster(userData.ID, id);
+            return RedirectToAction("ViewProfile" , "User");
         }
     }
 }
