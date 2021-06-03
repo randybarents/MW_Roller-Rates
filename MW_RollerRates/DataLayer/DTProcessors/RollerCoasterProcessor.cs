@@ -24,5 +24,14 @@ namespace DataLayer.DTProcessors
                 return con.Query<RollerCoasterDTO>(sql).ToList();
             }
         }
+
+        public RollerCoasterDTO GetRollerCoasterByUserName(string name)
+        {
+            string sql = $"SELECT * FROM rollercoaster WHERE name = '{name}';";
+            using (IDbConnection con = new MySqlConnection(GetConnectionString()))
+            {
+                return con.Query<RollerCoasterDTO>(sql).FirstOrDefault();
+            }
+        }
     }
 }

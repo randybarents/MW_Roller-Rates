@@ -49,7 +49,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <td>
-                            @Html.ActionLink("Check In", "CheckinRollercoaster", "RollerCoaster")
+                            @Html.ActionLink("Check In", "CheckinRollercoaster", "RollerCoaster" , new { rollerName = item.Name })
                         </td>
                     }
                 </tr>

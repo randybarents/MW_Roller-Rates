@@ -73,10 +73,12 @@ namespace MW_RollerRates.Controllers
             return View(items);
         }
 
-        public IActionResult CheckinRollercoaster(int id, string userName)
+        public IActionResult CheckinRollercoaster(string rollerName)
         {
+            var userName = User.Identity.Name;
             var userData = userProcessor.GetUserByUserName(userName);
-            userRollerprocessor.CheckinRollerCoaster(userData.ID, id);
+            var rollerData = processor.GetRollerCoasterByUserName(rollerName);
+            userRollerprocessor.CheckinRollerCoaster(userData.ID, rollerData.ID);
             return RedirectToAction("ViewProfile" , "User");
         }
     }
