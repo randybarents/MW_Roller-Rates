@@ -52,7 +52,7 @@
                             @Html.ActionLink("Check In", "CheckinRollercoaster", "RollerCoaster" , new { rollerName = item.Name })
                         </td>
                         <td>
-                            @Html.ActionLink("Review" , "PlaceReview" , "Review")
+                            @Html.ActionLink("Review" , "ViewReviewPage" , "Review" , new { rollerName = item.Name })
                         </td>
                     }
                 </tr>

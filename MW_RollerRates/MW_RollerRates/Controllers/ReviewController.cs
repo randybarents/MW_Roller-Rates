@@ -20,10 +20,23 @@ namespace MW_RollerRates.Controllers
             return View();
         }
 
-        public IActionResult PlaceReview(PlaceReviewModel review , string rollerName , string userName)
+        public IActionResult ViewReviewPage()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult PlaceReview()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public IActionResult PlaceReview(PlaceReviewModel review , string rollerName)
         {
             if (ModelState.IsValid)
-            {
+            { 
+                var userName = User.Identity.Name;
                 var userData = userProcessor.GetUserByUserName(userName);
                 var rollerData = coasterProcessor.GetRollerCoasterByName(rollerName);
                 processor.PlaceReview(

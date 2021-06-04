@@ -131,4 +131,4 @@ D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\bin\Debug\netcoreapp3.1\ru\
 D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\obj\Debug\netcoreapp3.1\Razor\Views\Review\PlaceReview.cshtml.g.cs
+D:\Git\MW_Roller-Rates\MW_RollerRates\MW_RollerRates\obj\Debug\netcoreapp3.1\Razor\Views\Review\ViewReviewPage.cshtml.g.cs

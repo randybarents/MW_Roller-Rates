@@ -19,7 +19,6 @@ namespace MW_RollerRates.Models
         [Display(Name = "Rating")]
         [Range(1 , 5 , ErrorMessage = "Rating must be between 1 and 5")]
         public int Rating { get; set; }
-        
         public int User_ID { get; set; }
         public int Rollercoaster_ID { get; set; }
     }
