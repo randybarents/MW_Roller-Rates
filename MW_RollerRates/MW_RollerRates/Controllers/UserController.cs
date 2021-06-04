@@ -88,7 +88,7 @@ namespace MW_RollerRates.Controllers
         public IActionResult ViewProfile()
         {
             var userData = Processor.GetUserByUserName(User.Identity.Name);
-            UserViewModel userViewModel = new UserViewModel
+            UserProfileViewModel userViewModel = new UserProfileViewModel
             {
                 Id = userData.ID,
                 Email = userData.Email,

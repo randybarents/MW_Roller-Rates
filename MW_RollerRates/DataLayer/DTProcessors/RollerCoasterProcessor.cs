@@ -25,7 +25,7 @@ namespace DataLayer.DTProcessors
             }
         }
 
-        public RollerCoasterDTO GetRollerCoasterByUserName(string name)
+        public RollerCoasterDTO GetRollerCoasterByName(string name)
         {
             string sql = $"SELECT * FROM rollercoaster WHERE name = '{name}';";
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))

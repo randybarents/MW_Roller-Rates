@@ -6,7 +6,10 @@ namespace ModelLayer
 {
     public class ReviewDTO
     {
+        public int Id { get; set; }
         public string Text { get; set; }
-        public decimal Rating { get; set; }
+        public int Rating { get; set; }
+        public int User_ID { get; set; }
+        public int Rollercoaster_ID { get; set; }
     }
 }

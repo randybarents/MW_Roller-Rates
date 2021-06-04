@@ -29,5 +29,14 @@ namespace DataLayer.DTProcessors
                 con.Execute(sql, data);
             }
         }
+
+        public List<RollerCoasterDTO> LoadUserRollerCoasters(int UserID)
+        {
+            string sql = $"SELECT * FROM user_checkins WHERE user_id = '{UserID}';"; 
+            using (IDbConnection con = new MySqlConnection(GetConnectionString()))
+            {
+                return con.Query<RollerCoasterDTO>(sql).ToList();
+            }
+        }
     }
 }

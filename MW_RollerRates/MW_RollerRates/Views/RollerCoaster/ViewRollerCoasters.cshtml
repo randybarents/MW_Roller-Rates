@@ -51,6 +51,9 @@
                         <td>
                             @Html.ActionLink("Check In", "CheckinRollercoaster", "RollerCoaster" , new { rollerName = item.Name })
                         </td>
+                        <td>
+                            @Html.ActionLink("Review" , "PlaceReview" , "Review")
+                        </td>
                     }
                 </tr>
                 }

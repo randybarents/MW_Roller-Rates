@@ -77,7 +77,7 @@ namespace MW_RollerRates.Controllers
         {
             var userName = User.Identity.Name;
             var userData = userProcessor.GetUserByUserName(userName);
-            var rollerData = processor.GetRollerCoasterByUserName(rollerName);
+            var rollerData = processor.GetRollerCoasterByName(rollerName);
             userRollerprocessor.CheckinRollerCoaster(userData.ID, rollerData.ID);
             return RedirectToAction("ViewProfile" , "User");
         }
