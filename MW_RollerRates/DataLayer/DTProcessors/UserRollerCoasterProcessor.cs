@@ -32,7 +32,8 @@ namespace DataLayer.DTProcessors
 
         public List<RollerCoasterDTO> LoadUserRollerCoasters(int UserID)
         {
-            string sql = $"SELECT * FROM user_checkins WHERE user_id = '{UserID}';"; 
+            string sql = $"SELECT user.ID , rollercoaster.ID , rollercoaster.Name FROM user INNER JOIN user_checkins ON user.ID = '{UserID}' INNER JOIN rollercoaster on rollercoaster.ID = user_checkins.Rollercoaster_ID;";
+            //string sql = $"SELECT * FROM user_checkins WHERE user_id = '{UserID}';"; 
             using (IDbConnection con = new MySqlConnection(GetConnectionString()))
             {
                 return con.Query<RollerCoasterDTO>(sql).ToList();

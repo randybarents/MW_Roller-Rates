@@ -12,6 +12,14 @@
             <h1>Username : @Model.DisplayName</h1>
             <h2>Email : @Model.Email</h2>
             <h3>Description : @Model.Description</h3>
+            @foreach (var item in Model.RollerCoasters)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+            }
         </div>
     </div>
 </div>

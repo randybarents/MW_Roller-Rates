@@ -16,6 +16,7 @@ namespace MW_RollerRates.Controllers
     public class UserController : Controller
     {
         UserProcessor Processor = new UserProcessor();
+        UserRollerCoasterProcessor rollerProcessor = new UserRollerCoasterProcessor();
 
         [HttpGet]
         public IActionResult CreateUser()
@@ -93,7 +94,8 @@ namespace MW_RollerRates.Controllers
                 Id = userData.ID,
                 Email = userData.Email,
                 DisplayName = userData.DisplayName,
-                Description = userData.Description
+                Description = userData.Description,
+                RollerCoasters = rollerProcessor.LoadUserRollerCoasters(userData.ID) 
             };
             return View(userViewModel);
         }
